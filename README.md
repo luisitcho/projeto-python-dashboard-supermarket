@@ -30,12 +30,20 @@ matplotlib
 ```
 
 ### 4. Gerar o `requirements.txt`
-O comando pip install -r requirements.txt instala as dependências listadas no `requirements.txt`:
+O comando `pip-compile` vai compilar o arquivo `requirements.txt` a partir do `requirements.in`, resolvendo todas as dependências (incluindo as versões).
+```
+pip-compile requirements.in --output-file requirements.txt
+```
+Isso vai gerar o `requirements.txt` com as versões exatas das dependências.
+
+### 5. Instalar as dependências
+O comando `pip install -r requirements.txt` instala as dependências listadas no `requirements.txt`:
 ```
 pip install -r requirements.txt
 ```
 
-### 5. Execute comando abaixo no terminal para iniciar a aplicação:
+### 6. Iniciar a aplicação com Streamlit
+Para rodar sua aplicação Streamlit, use:
 ```
- streamlit run dashboards.py
+streamlit run dashboards.py
 ```
